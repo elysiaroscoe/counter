@@ -6,10 +6,10 @@ app.secret_key = 'lets make a secret counter'
 def index():
     if 'visit' in session:
         print('yes')
-        session['visit'] = session['visit']+1
+        session['visit'] += 1
     else:
+        session['visit'] = 1
         print('no')
-    print(request.form)
     return render_template("index.html")
 
 @app.route('/destroy_session')
